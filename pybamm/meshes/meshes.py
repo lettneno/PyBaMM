@@ -77,7 +77,7 @@ class Mesh(dict):
                                 f"Points not given for a variable in domain '{domain}'"
                             )
                         # Otherwise add to the dictionary of submesh points
-                        submesh_pts[domain][var.name] = var_name_pts[var.name]
+                        submesh_pts[domain][var.name] = var_pts[tuple(geometry[domain].keys())[0]] 
         self.submesh_pts = submesh_pts
 
         # evaluate any expressions in geometry
